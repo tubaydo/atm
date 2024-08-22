@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+}
+
+
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/t.png'); /* Arka plan görseli */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@keyframes blink {
+  0% { background-color: white; } /* BaÅŸlangÄ±Ã§ta beyaz arka plan rengi */
+  50% { background-color: #75d6f9; } /* Ortada sarÄ± arka plan rengi */
+  100% { background-color: white; } /* Sonra tekrar beyaz arka plan rengi */
+}
+
+/* KÃ¼Ã§Ã¼k ekranlar (telefonlar) iÃ§in */
+@media (max-width: 600px) {
+  .login-button {
+      font-size: 16px;
+      padding: 8px 16px;
+  }
+}
+
+/* Orta boy ekranlar (tabletler) iÃ§in */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .login-button {
+      font-size: 18px;
+      padding: 10px 20px;
+  }
+}
+
+/* BÃ¼yÃ¼k ekranlar (masaÃ¼stÃ¼ bilgisayarlar) iÃ§in */
+@media (min-width: 1025px) {
+  .login-button {
+      font-size: 20px;
+      padding: 12px 24px;
+  }
+}
+
+.login-box {
+  position: absolute; /* Butonun konumunu ayarlamak iÃ§in */
+  top: 40px; /* Ãœstten mesafe */
+  left: 1190px; /* Soldan mesafe */
+  z-index: 10;
+}
+
+.login-button {
+  padding: 15px 30px; /* Dolgu alanÄ± */
+  background-color: white; /* Arka plan rengi */
+  color: rgb(239, 44, 44); /* YazÄ± rengi */
+  border: 3px solid black; /* Kenar rengi */
+  border-radius: 8px; /* KÃ¶ÅŸe yuvarlama */
+  font-size: 22px; /* YazÄ± boyutu */
+  font-weight: bold; /* KalÄ±n yazÄ± */
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  animation: blink 1s infinite; /* YanÄ±p sÃ¶nme animasyonu */
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  width: 200px; /* VarsayÄ±lan geniÅŸlik */
+  height: 70px; /* VarsayÄ±lan yÃ¼kseklik */
+}
+
+.login-button:hover {
+  color: white; /* Ãœzerine gelindiÄŸinde yazÄ± rengi */
+  background-color: black; /* Ãœzerine gelindiÄŸinde arka plan rengi */
+  transform: scale(1.2); /* Ãœzerine gelindiÄŸinde biraz bÃ¼yÃ¼tme */
+}
